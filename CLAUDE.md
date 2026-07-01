@@ -38,27 +38,9 @@ Don't split preemptively.
 
 ## Claude Code Skills
 
-Skills for Claude Code live in [`.agents/skills/`](./.agents/skills/). Each skill is a directory with a `SKILL.md` file.
+Skills for Claude Code live natively in [`.claude/skills/`](./.claude/skills/) — the standard Claude Code convention. Each skill is a directory with a `SKILL.md` file.
 
-Claude Code only discovers skills under `.claude/skills/` — not `.agents/`. To bridge this, `.claude/skills/` contains **Windows directory junctions** pointing to each skill in `.agents/skills/`:
-
-```
-.claude/skills/<name>  →  .agents/skills/<name>
-```
-
-**Rule: whenever you add, remove, or rename anything inside `.agents/skills/`, you must keep `.claude/skills/` in sync.**
-
-- **New skill added** to `.agents/skills/foo` → create a junction:
-  ```powershell
-  New-Item -ItemType Junction -Path .claude\skills\foo -Target (Resolve-Path .agents\skills\foo)
-  ```
-- **Skill removed** from `.agents/skills/foo` → delete the junction:
-  ```powershell
-  Remove-Item .claude\skills\foo
-  ```
-- **Skill renamed** → remove the old junction and create a new one.
-
-Never add actual directories or files directly under `.claude/skills/` — only junctions that point back to `.agents/skills/`.
+There is no `.agents/` directory and no junction/symlink layer. `.claude/skills/` is the single source of truth; edit skill files there directly.
 
 ## Conventions
 

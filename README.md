@@ -14,7 +14,7 @@ prompts/
 │   └── README.md        # philosophy, conventions, how to contribute (for humans)
 ├── agents/
 │   └── README.md        # same info, written for AI agents
-└── AGENTS.md             # entry point for AI agents
+└── CLAUDE.md             # entry point for AI agents
 ```
 
 ## Usage
