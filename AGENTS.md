@@ -8,10 +8,11 @@ Reusable one-liner prompts, by topic. Not tool, not lib — text only.
 
 ## Structure
 
-- [`topics/coding/general.md`](./topics/coding/general.md) — main prompts file, grouped by `##` category
+- [`topics/coding/general.md`](./topics/coding/general.md) — main prompts file, framework-agnostic, grouped by `##` category
+- [`topics/coding/angular.md`](./topics/coding/angular.md), [`topics/coding/vue.md`](./topics/coding/vue.md), [`topics/coding/react.md`](./topics/coding/react.md) — framework-specific prompts, same format
 - `topics/<domain>/` — one folder per domain, only if repo grows beyond coding prompts
 
-> `prompts.txt` = legacy flat-text; canonical = `topics/coding/general.md`.
+> `prompts.txt` = legacy flat-text; canonical = `topics/coding/general.md` (+ framework-specific files above).
 
 ## Philosophy
 
@@ -25,7 +26,7 @@ Reusable one-liner prompts, by topic. Not tool, not lib — text only.
 
 **Emoji = visual anchor, not search key.** Scan aid; several prompts share same emoji on purpose. Search by keyword, not emoji.
 
-**Prompts aim framework/language-agnostic**, exceptions exist (Angular/RxJS ones) — cleaned up opportunistically, not a blocker to adding content.
+**`general.md` stays framework/language-agnostic.** Stack-specific prompts (Angular, Vue, React, ...) live in their own `topics/coding/<framework>.md` file instead.
 
 ## Access pattern
 
@@ -33,16 +34,16 @@ Main files meant to be opened via GitHub "raw" URL for fast copy-paste. Regular 
 
 ## Prompt format
 
-One line: emoji (visual anchor, not search key) + imperative self-contained instruction. No `{{placeholders}}`.
+One line, as a Markdown list item (`- `) so GitHub renders each prompt on its own line: emoji (visual anchor, not search key) + imperative self-contained instruction. No `{{placeholders}}`.
 
 ```
-🔧 Refactor code to enhance clarity, consistency, and readability, following the styleguide and modern best practices
+- 🔧 Refactor code to enhance clarity, consistency, and readability, following the styleguide and modern best practices
 ```
 
 ## Adding a prompt
 
-1. Find/create `##` category in `topics/coding/general.md` (or new file — see below).
-2. One line: `<emoji> <imperative instruction>`.
+1. Find/create `##` category in `topics/coding/general.md` (or the relevant `topics/coding/<framework>.md` — see below).
+2. One line: `- <emoji> <imperative instruction>`.
 3. Place by expected usage freq (top = more used).
 4. Commit: `add: prompt for <short description>`.
 
@@ -62,5 +63,5 @@ No `.agents/`, no junction/symlink. `.claude/skills/` = single source, edit dire
 
 - `##` headers = primary org unit.
 - Emoji uniqueness **not** guaranteed — search by keyword.
-- Prompts framework/lang-agnostic where possible; stack-specific noted inline (Angular/RxJS note in `topics/coding/general.md`).
+- Prompts framework/lang-agnostic where possible; stack-specific prompts live in `topics/coding/<framework>.md`, not `general.md`.
 - No build, no tests, no CI. Just markdown edits.
