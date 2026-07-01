@@ -1,21 +1,21 @@
 # Agent Instructions
 
-Personal prompt library for AI coding tools (GitHub Copilot, Cursor, Claude Code).
+Personal prompt lib, AI coding tools (GitHub Copilot, Cursor, Claude Code).
 
 ## Repo purpose
 
-A collection of reusable one-liner prompts, organized by topic. Not a tool, not a library — just text.
+Reusable one-liner prompts, by topic. Not tool, not lib — text only.
 
 ## Structure
 
-- [`coding/general.md`](./coding/general.md) — main prompts file (all coding prompts, grouped by `##` category)
-- [`docs/README.md`](./docs/README.md) — philosophy and conventions (read before making structural changes)
+- [`coding/general.md`](./coding/general.md) — main prompts file, grouped by `##` category
+- [`docs/README.md`](./docs/README.md) — philosophy + conventions, read before structural change
 
-> `prompts.txt` is the legacy flat-text version; the canonical source is `coding/general.md`.
+> `prompts.txt` = legacy flat-text; canonical = `coding/general.md`.
 
 ## Prompt format
 
-Every prompt is **one line**: an emoji (visual anchor only, not a search key) followed by a clear, imperative, self-contained instruction. No `{{placeholders}}`.
+One line: emoji (visual anchor, not search key) + imperative self-contained instruction. No `{{placeholders}}`.
 
 ```
 🔧 Refactor code to enhance clarity, consistency, and readability, following the styleguide and modern best practices
@@ -23,28 +23,26 @@ Every prompt is **one line**: an emoji (visual anchor only, not a search key) fo
 
 ## Adding a prompt
 
-1. Find or create the relevant `##` category in `coding/general.md` (or a new file if warranted — see below).
-2. Add one line: `<emoji> <imperative instruction>`.
-3. Place it roughly by expected usage frequency within the category (top = more used).
+1. Find/create `##` category in `coding/general.md` (or new file — see below).
+2. One line: `<emoji> <imperative instruction>`.
+3. Place by expected usage freq (top = more used).
 4. Commit: `add: prompt for <short description>`.
 
 ## When to create a new file
 
-Only split a section into its own file (e.g. `coding/angular.md`) when it is **both**:
-- Large enough to be unwieldy in the general file, **and**
-- Specific to a stack/domain that doesn't apply broadly.
+Split into own file (e.g. `coding/angular.md`) only if **both**: unwieldy in general file, **and** stack/domain-specific, not broad.
 
 Don't split preemptively.
 
 ## Claude Code Skills
 
-Skills for Claude Code live natively in [`.claude/skills/`](./.claude/skills/) — the standard Claude Code convention. Each skill is a directory with a `SKILL.md` file.
+Skills live in [`.claude/skills/`](./.claude/skills/) — standard convention. Skill = dir + `SKILL.md`.
 
-There is no `.agents/` directory and no junction/symlink layer. `.claude/skills/` is the single source of truth; edit skill files there directly.
+No `.agents/`, no junction/symlink. `.claude/skills/` = single source, edit direct.
 
 ## Conventions
 
-- Categories are `##` headers; they are the primary organization unit.
-- Emoji uniqueness is **not** guaranteed — search by keyword, not by emoji.
-- Prompts are framework/language-agnostic where possible; stack-specific ones are noted inline (see Angular/RxJS note in `coding/general.md`).
-- The repo has no build step, no tests, no CI. Changes are just markdown edits.
+- `##` headers = primary org unit.
+- Emoji uniqueness **not** guaranteed — search by keyword.
+- Prompts framework/lang-agnostic where possible; stack-specific noted inline (Angular/RxJS note in `coding/general.md`).
+- No build, no tests, no CI. Just markdown edits.
