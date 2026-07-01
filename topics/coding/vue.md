@@ -9,6 +9,7 @@ Vue-specific prompts. See [`general.md`](./general.md) for framework-agnostic pr
 - 🧮 Replace values recomputed in methods or watchers with `computed()` properties
 - 👀 Replace `watch` callbacks that just re-derive state with `watchEffect`, and use `watch` only when you need the old/new values or explicit dependency control
 - 🧵 Add explicit TypeScript generics to `defineProps`/`defineEmits` instead of relying on runtime prop declarations
+- 🪄 Extract repeated computed/watch logic duplicated across sibling components into a shared composable
 
 ## Performance
 
@@ -17,6 +18,7 @@ Vue-specific prompts. See [`general.md`](./general.md) for framework-agnostic pr
 - 📦 Lazy-load routes and heavy components with dynamic `import()` and `defineAsyncComponent`
 - 🔑 Audit `v-for` loops for stable, unique `:key` bindings instead of array index
 - 🧹 Ensure `watch`/`watchEffect` sources and event listeners are cleaned up in `onUnmounted` when not auto-stopped by the component scope
+- ❄️ Use `v-once` for static content that never changes after initial render
 
 ## Modern Patterns
 
@@ -25,8 +27,10 @@ Vue-specific prompts. See [`general.md`](./general.md) for framework-agnostic pr
 - 🔌 Replace `provide`/`inject` without typing with typed injection keys (`InjectionKey<T>`)
 - 🧩 Replace slot-based prop drilling with scoped slots that expose only the data the child needs
 - ⏳ Add `<Suspense>` around components with top-level `await` in `<script setup>` for async setup
+- 🪝 Replace manual template refs juggling with the `useTemplateRef` helper (Vue 3.5+)
 
 ## Testing
 
 - 🧪 Write component tests with Vue Testing Library / `@vue/test-utils` that query by role/label text instead of implementation details
 - 🎭 Mock network requests at the boundary rather than mocking composables or components directly
+- 🎬 Add Cypress or Playwright end-to-end tests for critical multi-page user flows

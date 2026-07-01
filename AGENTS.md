@@ -24,7 +24,7 @@ Reusable one-liner prompts, by topic. Not tool, not lib — text only.
 
 **Order = loose usage signal.** Within category, prompts near top used more often. Not strictly maintained — don't re-sort every edit.
 
-**Emoji = visual anchor, not search key.** Scan aid; several prompts share same emoji on purpose. Search by keyword, not emoji.
+**Emoji = visual anchor, not search key.** Scan aid; keep each emoji unique within its file (no repeats in one list). Reuse across different files is fine. Search by keyword, not emoji.
 
 **`general.md` stays framework/language-agnostic.** Stack-specific prompts (Angular, Vue, React, ...) live in their own `topics/coding/<framework>.md` file instead.
 
@@ -62,6 +62,6 @@ No `.agents/`, no junction/symlink. `.claude/skills/` = single source, edit dire
 ## Conventions
 
 - `##` headers = primary org unit.
-- Emoji uniqueness **not** guaranteed — search by keyword.
+- Emoji unique per file (no repeats within one list) — but search by keyword, not emoji.
 - Prompts framework/lang-agnostic where possible; stack-specific prompts live in `topics/coding/<framework>.md`, not `general.md`.
 - No build, no tests, no CI. Just markdown edits.
