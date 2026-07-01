@@ -10,13 +10,16 @@ A personal, growing library of prompts I reuse often with AI coding tools (GitHu
 prompts/
 ├── topics/
 │   └── coding/
-│       └── general.md   # reusable prompts, grouped by category
+│       ├── general.md   # reusable, framework-agnostic prompts, grouped by category
+│       ├── angular.md    # Angular/RxJS-specific prompts
+│       ├── vue.md        # Vue-specific prompts
+│       └── react.md      # React-specific prompts
 └── AGENTS.md             # philosophy, conventions, how to contribute (humans + AI agents)
 ```
 
 ## Usage
 
-Each prompt is one line: an emoji (visual anchor, not a search key) followed by a ready-to-run instruction. Open [`topics/coding/general.md`](./topics/coding/general.md), grab the one you need, paste it into your tool of choice.
+Each prompt is one line: an emoji (visual anchor, not a search key) followed by a ready-to-run instruction. Open [`topics/coding/general.md`](./topics/coding/general.md) for framework-agnostic prompts, or the file matching your stack ([`angular.md`](./topics/coding/angular.md), [`vue.md`](./topics/coding/vue.md), [`react.md`](./topics/coding/react.md)), grab the one you need, paste it into your tool of choice.
 
 For the reasoning behind the structure and how to add new prompts, see [`AGENTS.md`](./AGENTS.md).
 
