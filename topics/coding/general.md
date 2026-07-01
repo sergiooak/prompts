@@ -1,8 +1,8 @@
 # Coding Prompts
 
-Reusable prompts for GitHub Copilot, Cursor, and Claude Code. One line per prompt, grouped by category. See [`/docs`](../docs/README.md) for the philosophy and how to contribute.
+Reusable prompts for GitHub Copilot, Cursor, and Claude Code. One line per prompt, grouped by category. See [`AGENTS.md`](../../AGENTS.md) for the philosophy and how to contribute.
 
-> Note: a few prompts below (Angular/RxJS/Nebular) are stack-specific and will move to their own file (e.g. `coding/angular.md`) once that section grows enough to justify it.
+> Note: a few prompts below (Angular/RxJS/Nebular) are stack-specific and will move to their own file (e.g. `topics/coding/angular.md`) once that section grows enough to justify it.
 
 ## Code Readability & Legibility
 
